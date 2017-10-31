@@ -33,6 +33,7 @@ r1.question("filename: ", function(filename) {
   // Requirement #2 - Read the contents of the file
   var fs = require('fs');
   fs.readFile(filename, function (error, buffer) {
+    r1.close();
     if (error) {
       // Requirement #5
       console.error(error.message);
@@ -44,5 +45,4 @@ r1.question("filename: ", function(filename) {
     // Requirement #4 - Print the text
     console.log(uppercase_contents);
   });
-  r1.close();
 });
