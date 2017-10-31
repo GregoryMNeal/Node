@@ -32,6 +32,7 @@ r1.question("Input file name: ", function(inputfile) {
   // Requirement #3 - Read the contents of the input file
   var fs = require('fs');
   fs.readFile(inputfile, function (error, buffer) {
+    r1.close();
     if (error) {
       // Requirement #6 - Trigger an error condition by running the program on a non-existent input file, ensure that the error is properly displayed.
       console.error(error.message);
@@ -44,7 +45,6 @@ r1.question("Input file name: ", function(inputfile) {
 
     // Requirement #2 - Prompt the User for an output file name
     r1.question("Output file name: ", function(outputfile) {
-      console.log('output file function triggered')
       // Requirement #5 - Write the all caps text to the output file.  As a result, output.txt should now contain the text HELLO, I AM FILE 1.
       fs.writeFile(outputfile, uppercase_data, function (error) {
         r1.close();
@@ -54,7 +54,7 @@ r1.question("Input file name: ", function(inputfile) {
           return;
         }
         // Write confirmation message
-        console.error("Wrote to file ", outputfile);
+        console.log("Wrote to file ", outputfile);
       });
     });
   });
