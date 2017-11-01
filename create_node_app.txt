@@ -1,0 +1,147 @@
+For a Node.js/Express.js project:
+
+- mkdir xxxxxxx (where ‘xxxxx’ is your project directory - actually this would likely be done as the result of a git clone command)
+
+- npm init (to create package.json)
+
+- npm install request —save  (the simplest way possible to make http calls)
+
+- npm install express —save (if Express.js is being used)
+
+- npm install nodemon —save (a utility that will monitor for any changes in your source and automatically restart your server - goes into ./node_modules/.bin/nodemon where ’.’ is current directory)
+
+- npm install pg-promise — save (if accessing a database)
+
+- npm install bluebird —save (adds the .finally statement when using a Promise…see below for example:)
+		Var Promise = require(“bluebird”);  (this will give you access to the ‘finally’ statement)
+
+- npm install hbs —save
+
+- npm install body-parser —save
+
+- Add the following statement in your bash profile so your program will find your node_modules (to view your path - echo $PATH):
+		export PATH=$PATH:./node_modules/.bin
+
+- Static Files (do this to use static files using Express JS) - make a directory called ‘public’ in your project directory.  The following code MUST be at the top of your app!!!
+		app.use(‘/static’, express.static('public'));
+
+- Make a directory called ‘views’ in your project directory.
+
+- Add the following code to your Express.js pgm to make it use handlebars as your template engine:
+		app.set('view engine', 'hbs');
+
+——
+Hello World app:
+
+// code below imports express and makes an app
+var express = require('express');
+var app = express();
+
+// code below invokes the get function (there are no classes) for the ‘/‘ browser request
+app.get('/', function (request, response) {
+  response.send('Hello World!');
+});
+
+// listening on port 8000, callback function is invoked with no arguments
+app.listen(8000, function () {
+  console.log('Listening on port 8000');
+});
+
+To start this app:  $ nodemon app.js
+
+——
+Add more handlers (called ‘views’ in Express.js)
+
+app.get('/about', function (request, response) {
+  response.send('About Me');
+});
+
+app.get('/projects', function (request, response) {
+  response.send('Projects');
+});
+
+——
+URL Parameters (getting a URL and extracting pieces of it)
+
+//  Using this code you can pull out pieces of the URL so you can you use it in your program to do things like retrieve info from your DB
+app.get('/post/:slug', function (request, response) {
+  var slug = request.params.slug;
+  response.send('Post About: ' + slug);
+});
+
+——
+URL Query Parameters (e.g a query parameter would be something like ‘?fname=Greg’ at the end of the URL)
+
+app.get('/hello', function (request, response) {
+  var name = request.query.name || 'World';
+  response.send('Hello ' + name);
+});
+
+——
+Your HTML Form
+
+views/form.hbs:
+
+<form action="/submit" method="POST">
+  <label>Name</label>
+  <input type="text" name="name">
+  <br><br>
+  <button type="submit">Submit</button>
+</form>
+
+in your app.js:
+
+app.get('/form', function(req, resp) {
+  response.render('form.hbs');
+});
+
+——
+POST Parameters
+
+npm install body-parser
+
+// The following code is the equivalent of an import statement
+const body_parser = require('body-parser');
+
+// The following code sets your program up to use the body parser
+app.use(body_parser.urlencoded({extended: false}));
+
+app.post('/submit', function (request, response) {
+  console.log(request.body);
+  response.send('OK');
+});
+
+——
+Redirects
+
+To redirect to another page:
+	response.redirect('/some-where-else');
+
+——
+Referencing fields from an HTML form
+
+Request.body.xxxxxx (where ‘xxxxx’ is what you put in your HTML form using the ‘name=‘ on an ‘<input>’ element
+- Example:  <input type=text name=“name”>
+
+——
+Error Handling
+
+You get 3 things back:
+1. Request - named as ‘request’ or more commonly ‘req’
+2. Response - named as ‘response’ or more commonly ‘res’
+3. Next - this is a function
+
+app.get('/search', function(req, resp, next) {
+// ‘term’ comes from the URL
+let term = req.query.searchTerm;
+//  Query statement
+  let query = "SELECT * FROM restaurant WHERE \
+  restaurant.name ILIKE '%$1#%'";
+  db.any(query, term)
+    .then(function(resultsArray) {
+     	 resp.render('search_results.hbs', {
+        		results: resultsArray
+      });
+    })
+    .catch(next); — ALWAYS DO THIS (always code your query’s like this group of code)
+});
