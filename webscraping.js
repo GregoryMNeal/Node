@@ -13,8 +13,6 @@ Use Promise.all and request-promise to retrieve the HTML files for all the web p
 
 */
 
-var Promise = require('bluebird')
-
 var urls = [
   'https://en.wikipedia.org/wiki/Futures_and_promises',
   'https://en.wikipedia.org/wiki/Continuation-passing_style',
@@ -23,7 +21,13 @@ var urls = [
   'https://en.wikipedia.org/wiki/Google_Chrome'
 ];
 
-Promise.all(urls)
-  .then(function (responses) {
-    console.log(responses);
+var rp = require('request-promise');
+
+Promise.all([rp(urls[0]),
+             rp(urls[1]),
+             rp(urls[2]),
+             rp(urls[3]),
+             rp(urls[4])])
+  .then(function (htmlresponse) {
+    console.log(htmlresponse);
   });
