@@ -4,20 +4,22 @@ For a Node.js/Express.js project:
 
 - npm init (to create package.json)
 
-- npm install request —save  (the simplest way possible to make http calls)
+- npm install request —-save  (the simplest way possible to make http calls)
 
-- npm install express —save (if Express.js is being used)
+- npm install express —-save (if Express.js is being used)
 
-- npm install nodemon —save (a utility that will monitor for any changes in your source and automatically restart your server - goes into ./node_modules/.bin/nodemon where ’.’ is current directory)
+- npm install nodemon —-save (a utility that will monitor for any changes in your source and automatically restart your server - goes into ./node_modules/.bin/nodemon where ’.’ is current directory)
 
-- npm install pg-promise — save (if accessing a database)
+- npm install pg-promise —-save (if accessing a database)
 
-- npm install bluebird —save (adds the .finally statement when using a Promise…see below for example:)
+- npm install bluebird —-save (adds the .finally statement when using a Promise…see below for example:)
 		Var Promise = require(“bluebird”);  (this will give you access to the ‘finally’ statement)
 
-- npm install hbs —save
+- npm install hbs —-save
 
-- npm install body-parser —save
+- npm install body-parser —-save
+
+- npm install sharp --save  (the typical use for this high speed Node.js moduleis to convert large images in common formats to smaller, web=friendly JPEG, PNG, and WebP images of varying dimensions)
 
 - Add the following statement in your bash profile so your program will find your node_modules (to view your path - echo $PATH):
 		export PATH=$PATH:./node_modules/.bin
