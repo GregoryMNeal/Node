@@ -1,10 +1,32 @@
 For a Node.js/Express.js project:
 
-- mkdir xxxxxxx (where ‘xxxxx’ is your project directory - actually this would likely be done as the result of a git clone command)
+-----
+Bash Profile
 
-- npm init (to create package.json)
+- Add the following statement to your bash profile so your program will find your node packages in node_modules:
+		export PATH=$PATH:./node_modules/.bin
 
-- npm install request —-save  (the simplest way possible to make http calls)
+		* NOTE: you MUST restart your Terminal session for this change to be effective
+
+- To view your path and verify it's configured properly - echo $PATH
+
+
+-----
+Project Directory
+
+- mkdir xxxxxxx (where ‘xxxxx’ is your project directory - this would likely be done as the result of a git clone command)
+
+
+-----
+package.json
+
+- npm init (creates the package.json which stores all of the information and package requirements for your project)
+
+
+-----
+node_modules: A node_modules directory will be automatically created for you when you do your first 'npm install <package>' (where <package> is the name of the package being installed) command.
+
+- npm install axios (Promise based HTTP client for the browser and node.js.  This is an alternative to using 'npm install request' and 'npm install request-promise'.  It is preferred because you can use it on the front-end (browser) and the back-end (node.js).)
 
 - npm install express —-save (if Express.js is being used)
 
@@ -21,8 +43,9 @@ For a Node.js/Express.js project:
 
 - npm install sharp --save  (the typical use for this high speed Node.js moduleis to convert large images in common formats to smaller, web=friendly JPEG, PNG, and WebP images of varying dimensions)
 
-- Add the following statement in your bash profile so your program will find your node_modules (to view your path - echo $PATH):
-		export PATH=$PATH:./node_modules/.bin
+
+-----
+Project structure
 
 - Static Files (do this to use static files using Express JS) - make a directory called ‘public’ in your project directory.  The following code MUST be at the top of your app!!!
 		app.use(‘/static’, express.static('public'));
@@ -32,8 +55,17 @@ For a Node.js/Express.js project:
 - Add the following code to your Express.js pgm to make it use handlebars as your template engine:
 		app.set('view engine', 'hbs');
 
-——
-Hello World app:
+
+-----
+Executing your Node.js program
+
+$ nodemon xxxxxxxxxx.js  (where 'xxxxxxxxxx' is your program name)
+
+* NOTE:  Using the 'nodemon' command to invoke a Node.js program is preferred over the 'node' command because it will monitor for any changes in your source and automatically restart your server
+
+
+-----
+App structure - Hello World app:
 
 // code below imports express and makes an app
 var express = require('express');
@@ -51,7 +83,8 @@ app.listen(8000, function () {
 
 To start this app:  $ nodemon app.js
 
-——
+
+-----
 Add more handlers (called ‘views’ in Express.js)
 
 app.get('/about', function (request, response) {
@@ -62,7 +95,8 @@ app.get('/projects', function (request, response) {
   response.send('Projects');
 });
 
-——
+
+-----
 URL Parameters (getting a URL and extracting pieces of it)
 
 //  Using this code you can pull out pieces of the URL so you can you use it in your program to do things like retrieve info from your DB
@@ -71,7 +105,8 @@ app.get('/post/:slug', function (request, response) {
   response.send('Post About: ' + slug);
 });
 
-——
+
+-----
 URL Query Parameters (e.g a query parameter would be something like ‘?fname=Greg’ at the end of the URL)
 
 app.get('/hello', function (request, response) {
@@ -79,7 +114,8 @@ app.get('/hello', function (request, response) {
   response.send('Hello ' + name);
 });
 
-——
+
+-----
 Your HTML Form
 
 views/form.hbs:
@@ -97,7 +133,8 @@ app.get('/form', function(req, resp) {
   response.render('form.hbs');
 });
 
-——
+
+-----
 POST Parameters
 
 npm install body-parser
@@ -113,19 +150,22 @@ app.post('/submit', function (request, response) {
   response.send('OK');
 });
 
-——
+
+-----
 Redirects
 
 To redirect to another page:
 	response.redirect('/some-where-else');
 
-——
+
+-----
 Referencing fields from an HTML form
 
 Request.body.xxxxxx (where ‘xxxxx’ is what you put in your HTML form using the ‘name=‘ on an ‘<input>’ element
 - Example:  <input type=text name=“name”>
 
-——
+
+-----
 Error Handling
 
 You get 3 things back:
