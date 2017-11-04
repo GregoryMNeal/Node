@@ -78,7 +78,7 @@ var main = function () {
     .then(function (inputs) {
       var url = inputs[0];
       var filename = inputs[1];
-      return saveWebPage(url, filename);
+      saveWebPage(url, filename);
     })
     .catch(function (error) {
       console.error(error);

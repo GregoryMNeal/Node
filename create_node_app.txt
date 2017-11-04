@@ -24,7 +24,7 @@ package.json
 
 
 -----
-node_modules: A node_modules directory will be automatically created for you when you do your first 'npm install <package>' (where <package> is the name of the package being installed) command.
+node_modules: A node_modules directory will automatically be created for you when you do your first 'npm install <package>' (where <package> is the name of the package being installed)
 
 - npm install express —-save (if Express.js is being used)
 
