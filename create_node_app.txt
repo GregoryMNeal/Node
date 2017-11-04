@@ -26,9 +26,11 @@ package.json
 -----
 node_modules: A node_modules directory will be automatically created for you when you do your first 'npm install <package>' (where <package> is the name of the package being installed) command.
 
-- npm install axios (Promise based HTTP client for the browser and node.js.  This is an alternative to using 'npm install request' and 'npm install request-promise'.  It is preferred because you can use it on the front-end (browser) and the back-end (node.js).)
-
 - npm install express —-save (if Express.js is being used)
+
+- npm install prompt-promise —-save (used to prompt for user input)
+
+- npm install axios (Promise based HTTP client for the browser and node.js.  This is an alternative to using 'npm install request' and 'npm install request-promise'.  It is preferred because you can use it on the front-end (browser) and the back-end (node.js).)
 
 - npm install nodemon —-save (a utility that will monitor for any changes in your source and automatically restart your server - goes into ./node_modules/.bin/nodemon where ’.’ is current directory)
 

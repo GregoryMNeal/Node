@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/HarleyGeek/Node#readme",
   "dependencies": {
-    "nodemon": "^1.12.1"
+    "nodemon": "^1.12.1",
+    "prompt-promise": "^1.0.3"
   }
 }
