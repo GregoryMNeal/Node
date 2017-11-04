@@ -39,7 +39,7 @@ node_modules: A node_modules directory will automatically be created for you whe
 - npm install bluebird —-save (adds the .finally statement when using a Promise…see below for example:)
 		Var Promise = require(“bluebird”);  (this will give you access to the ‘finally’ statement)
 
-- npm install hbs —-save
+- npm install hbs —-save  (Express.js view engine for handlebars.js - see http://handlebarsjs.com/ - handlebars is used to build templates)
 
 - npm install body-parser —-save
 
