@@ -47,6 +47,13 @@ node_modules: A node_modules directory will automatically be created for you whe
 
 - npm install morgan --save  (a nice logger - this is recommended to help monitor/debug your app)
 
+If you need to store a password:
+	- npm install pbkdf2 --save  (This library provides the functionality of PBKDF2 with the ability to use any supported hashing algorithm returned from crypto.getHashes())
+	- npm install cypto --save  (according to npm this has been deprecated and is a built-in module to Node.js so this may not be necessary)
+
+	OR
+
+	npm install pbkdf2-helpers  (Helper functions for implementing PBKDF2 password storage.)
 
 -----
 Project structure
