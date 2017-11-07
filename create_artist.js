@@ -17,7 +17,7 @@ var getUserInputs = new Promise(
     var inputs = [];
     // Prompt for the artist name
     prompt('Please enter the artist name: ')
-    // then save the artist name and return as resolved
+    // then save the prompt information and return as resolved
     .then(function (value) {
       inputs.push(value);
       prompt.done();

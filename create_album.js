@@ -27,7 +27,7 @@ var getUserInputs = new Promise(
       inputs.push(value);
       return prompt('Please enter the artist ID: ');
     })
-    // then save the file name and return as resolved
+    // then save the prompt information and return as resolved
     .then(function (value) {
       inputs.push(value);
       prompt.done();

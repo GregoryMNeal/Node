@@ -43,7 +43,7 @@ node_modules: A node_modules directory will automatically be created for you whe
 
 - npm install body-parser —-save  (Parse incoming request bodies in a middleware before your handlers)
 
-- npm install sharp --save  (the typical use for this high speed Node.js moduleis to convert large images in common formats to smaller, web=friendly JPEG, PNG, and WebP images of varying dimensions)
+- npm install sharp --save  (the typical use for this high speed Node.js module is to convert large images in common formats to smaller, web=friendly JPEG, PNG, and WebP images of varying dimensions)
 
 - npm install morgan --save  (a nice logger - this is recommended to help monitor/debug your app)
 
