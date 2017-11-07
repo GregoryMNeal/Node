@@ -6,7 +6,9 @@ Write a script to create a new album in the database. You may either connect to 
 
 // Imports
 var prompt = require('prompt-promise'); // for accepting user input - promise based
-var pgp = require('pg-promise'); // for accessing database
+var pgp = require('pg-promise')({
+  // initialization options
+}); // for accessing database
 var db = pgp({database: 'music'});
 
 // Define a Promise for prompting the User for inputs
@@ -46,11 +48,11 @@ function writeAlbum (album_name, album_year, id) {
     year: album_year,
     artist_id: id
   };
-  var q = "INSERT INTO album \
-  VALUES (default, ${name}, ${year}, ${artist_id})";
-  db.result(q, album_info)
-  .then(function (result) {
-    console.log(result);
+  var q = 'INSERT INTO album \
+    VALUES (default, ${name}, ${year}, ${artist_id}) RETURNING id';
+  db.one(q, album_info)
+    .then(function (result) {
+      console.log('Created album with ID '+ result.id);
   });
 }
 
@@ -62,9 +64,11 @@ var main = function () {
       var album_year = inputs[1];
       var id = inputs[2];
       writeAlbum(album_name, album_year, id);
+      pgp.end();
     })
     .catch(function (error) {
       console.error(error);
+      pgp.end();
     });
 }
 

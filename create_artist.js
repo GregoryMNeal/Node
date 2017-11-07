@@ -36,11 +36,11 @@ function writeArtist (artist_name) {
   var artist_info = {
     name: artist_name
   };
-  var q = "INSERT INTO artist \
-  VALUES (default, ${name})";
-  db.result(q, artist_info)
-  .then(function (result) {
-    console.log(result.id);
+  var q = 'INSERT INTO artist \
+    VALUES (default, ${name}) RETURNING id';
+  db.one(q, artist_info)
+    .then(function (result) {
+      console.log('Created artist with ID '+ result.id);
   });
 }
 
