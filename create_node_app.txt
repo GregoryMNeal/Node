@@ -55,6 +55,9 @@ If you need to store a password:
 
 	npm install pbkdf2-helpers  (Helper functions for implementing PBKDF2 password storage.)
 
+	npm install socket.io  (Web Sockets)
+
+
 -----
 Project structure
 
