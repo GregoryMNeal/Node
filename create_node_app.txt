@@ -24,6 +24,8 @@ package.json
 
 
 -----
+Install Packages
+
 node_modules: A node_modules directory will automatically be created for you when you do your first 'npm install <package>' (where <package> is the name of the package being installed)
 
 - npm install express —-save (if Express.js is being used)
@@ -58,6 +60,11 @@ If you need to store a password:
 	npm install pbkdf2-helpers  (Helper functions for implementing PBKDF2 password storage.)
 
 npm install socket.io  (Web Sockets)
+
+If using Sequelize to access your database:
+- npm install --save sequelize
+- npm install --save sequelize-cli
+- npm install --save pg pg-hstore
 
 
 -----
