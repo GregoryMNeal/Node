@@ -66,6 +66,19 @@ If using Sequelize to access your database:
 - npm install --save sequelize-cli
 - npm install --save pg pg-hstore
 
+If using a database other than Postgres:
+	npm install --save mysql2
+	npm install --save sqlite3
+	npm install --save tedious // MSSQL
+
+If using Sequilize:
+- sequelize init
+
+* NOTE - these may already be installed as a result of being dependencies of pg-promise
+
+If using Less CSS:
+- npm install less
+- npm install watch-run
 
 -----
 Project structure
@@ -78,6 +91,7 @@ Project structure
 - Add the following code to your Express.js pgm to make it use handlebars as your template engine:
 		app.set('view engine', 'hbs');
 
+- Store your db models in a 'models' directory (models should be created automatically when you npm install sequilize-cli)
 
 -----
 Executing your Node.js program
