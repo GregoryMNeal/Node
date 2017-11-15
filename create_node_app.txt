@@ -59,7 +59,9 @@ If you need to store a password:
 
 	npm install pbkdf2-helpers  (Helper functions for implementing PBKDF2 password storage.)
 
-npm install socket.io  (Web Sockets)
+
+If using WebSockets:
+- npm install socket.io --save
 
 If using Sequelize to access your database:
 - npm install --save sequelize
@@ -208,7 +210,7 @@ Error Handling
 You get 3 things back:
 1. Request - named as ‘request’ or more commonly ‘req’
 2. Response - named as ‘response’ or more commonly ‘res’
-3. Next - this is a function
+3. Next - this is so the page doesn't hang
 
 app.get('/search', function(req, resp, next) {
 // ‘term’ comes from the URL
