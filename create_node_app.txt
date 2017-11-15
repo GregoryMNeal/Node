@@ -57,7 +57,7 @@ If you need to store a password:
 
 	OR
 
-	npm install pbkdf2-helpers  (Helper functions for implementing PBKDF2 password storage.)
+- npm install pbkdf2-helpers --save (Helper functions for implementing PBKDF2 password storage.)
 
 
 If using WebSockets:
