@@ -1,4 +1,4 @@
-For a Node.js/Express.js project:
+For a Node.js, Express.js, or React project:
 
 -----
 Bash Profile
@@ -12,7 +12,7 @@ Bash Profile
 
 
 -----
-Project Directory
+Project Directory (not if React)
 
 - mkdir xxxxxxx (where ‘xxxxx’ is your project directory - this would likely be done as the result of a git clone command)
 
@@ -24,7 +24,7 @@ package.json
 
 
 -----
-Install Packages
+Install Packages (not if React)
 
 node_modules: A node_modules directory will automatically be created for you when you do your first 'npm install <package>' (where <package> is the name of the package being installed)
 
@@ -91,7 +91,7 @@ If creating a React app:
 
 
 -----
-Project structure
+Project structure (not if React)
 
 - Static Files (do this to use static files using Express JS) - make a directory called ‘public’ in your project directory.  The following code MUST be at the top of your app!!!
 		app.use(‘/static’, express.static('public'));
@@ -104,7 +104,7 @@ Project structure
 - Store your db models in a 'models' directory (models should be created automatically when you npm install sequilize-cli)
 
 -----
-Executing your Node.js program
+Executing your Node.js program (not if React)
 
 $ nodemon xxxxxxxxxx.js  (where 'xxxxxxxxxx' is your program name)
 
@@ -113,6 +113,14 @@ $ nodemon xxxxxxxxxx.js  (where 'xxxxxxxxxx' is your program name)
 
 -----
 If a React app:
+
+- create-react-app xxxxxx (where 'xxxxxx' is your app name) - this will automatically create your project Directory
+
+- cd xxxxxx (where 'xxxxxx' is your project directory)
+
+- Initialize your project directory as a Git repository
+
+- You can now start coding your React app
 
 Start by modifying the 'App.js' that is automatically provided.  Add your components here.
 
