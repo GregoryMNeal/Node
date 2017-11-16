@@ -82,6 +82,14 @@ If using Less CSS:
 - npm install less
 - npm install watch-run
 
+If creating a React app:
+- npm install -g create-react-app (you to only do this once ever on your PC)
+- create-react-app my-app (where 'my-app' is the project folder for your new app) - this will create a project directory for you (you'll need to initialize that directory as Git repository after this step).
+- initialize the project directory as a Git repository
+- change your working directory to your React project (cd my-app)
+- enter 'npm start' from Terminal to run your app
+
+
 -----
 Project structure
 
@@ -101,6 +109,44 @@ Executing your Node.js program
 $ nodemon xxxxxxxxxx.js  (where 'xxxxxxxxxx' is your program name)
 
 * NOTE:  Using the 'nodemon' command to invoke a Node.js program is preferred over the 'node' command because it will monitor for any changes in your source and automatically restart your server
+
+
+-----
+If a React app:
+
+Start by modifying the 'App.js' that is automatically provided.  Add your components here.
+
+To create a new component...
+
+	Always start with the import React statement...
+	- import React, { Component } from 'react';
+
+	Then define the Class...
+	- class HelloWorld extends Component {
+		constructor (props) {
+			super(props);
+
+			this.state = {
+				...add your state variables heres
+				date: new Date(),
+				name: "Greg"
+			}
+		}
+	}
+
+	Then add your 'render' function...
+	- render () {
+			...put your code here
+	}
+
+	To make your component available to be imported you need the export statement...
+	- export default HelloMessage; (where 'HelloMessage' is the name of the Class)
+
+!!!  React won’t know to re-render anything until you call the ‘setState’ function!
+- this.setState({people: this.state.people});
+
+To use CSS, add an import statement to your component:
+- import './Hello.css'
 
 
 -----
