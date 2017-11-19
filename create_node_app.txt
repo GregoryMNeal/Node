@@ -86,8 +86,10 @@ If creating a React app:
 - npm install -g create-react-app (you to only do this once ever on your PC)
 - create-react-app my-app (where 'my-app' is the project folder for your new app) - this will create a project directory for you (you'll need to initialize that directory as Git repository after this step).
 - initialize the project directory as a Git repository
-- change your working directory to your React project (cd my-app)
+- cd my-app (change your working directory to your React project)
 - enter 'npm start' from Terminal to run your app
+- npm install react-tap-event-plugin --save
+- npm install material-ui --save
 
 
 -----
