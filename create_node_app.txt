@@ -10,18 +10,15 @@ Bash Profile
 
 - To view your path and verify it's configured properly - echo $PATH
 
-
 -----
 Project Directory (not if React)
 
 - mkdir xxxxxxx (where ‘xxxxx’ is your project directory - this would likely be done as the result of a git clone command)
 
-
 -----
 package.json
 
 - npm init (creates the package.json which stores all of the information and package requirements for your project)
-
 
 -----
 Install Packages (not if React)
