@@ -79,7 +79,6 @@ If using Less CSS:
 - npm install less
 - npm install watch-run
 
-
 -----
 Project structure (not if React)
 
@@ -99,7 +98,6 @@ Executing your Node.js program (not if React)
 $ nodemon xxxxxxxxxx.js  (where 'xxxxxxxxxx' is your program name)
 
 * NOTE:  Using the 'nodemon' command to invoke a Node.js program is preferred over the 'node' command because it will monitor for any changes in your source and automatically restart your server
-
 
 -----
 If a React app:
@@ -150,7 +148,6 @@ To create a new component...
 
 To use CSS, add an import statement to your component:
 - import './Hello.css'
-
 
 -----
 App structure - Hello World app:
