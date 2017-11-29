@@ -79,6 +79,9 @@ If using Less CSS:
 - npm install less
 - npm install watch-run
 
+If using JSON Web Tokens (JWT):
+- npm install jsonwebtoken --save
+
 -----
 Project structure (not if React)
 
